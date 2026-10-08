@@ -1,0 +1,5 @@
+.env
+src/DiagnosticAgent/appsettings.Local.json
+**/bin/
+**/obj/
+TestResults/

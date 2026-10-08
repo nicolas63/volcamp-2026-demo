@@ -1,0 +1,19 @@
+{
+  "mode": "replay",
+  "scenario": "slow-inventory",
+  "question": "Why are orders failing in the last five minutes?",
+  "toolCalls": [
+    "get_service_health",
+    "get_dependency_metrics",
+    "find_slow_traces",
+    "get_trace_summary",
+    "search_correlated_logs"
+  ],
+  "evidence": {
+    "timeoutMs": 700,
+    "retryCount": 2,
+    "inventoryDelayMs": 2500,
+    "traceId": "4f1c2e4a9d5b4d37a84a7f3c2d11e900"
+  },
+  "diagnosis": "OrderService exhausted three InventoryService attempts because each request exceeded the 700 ms timeout while VOLCAMP-63 introduced 2500 ms latency."
+}
